@@ -1,28 +1,27 @@
-import { useState } from 'react'
+import HeroSection from './components/HeroSection';
+import PainPointsSection from './components/PainPointsSection';
+import SolutionsAndFeatures from './components/SolutionsAndFeatures';
+import PricingSection from './components/PricingSection';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
-        </div>
+    <div className="min-h-screen w-full bg-[#0A0F1E] font-[Inter] text-[#E8ECF7]">
+      {/* Layered gradient ribbons */}
+      <div className="pointer-events-none fixed left-1/2 top-0 -translate-x-1/2">
+        <div className="h-24 w-[120vw] bg-gradient-to-r from-transparent via-[#4C7EFF]/10 to-transparent blur-2xl" />
       </div>
+
+      <HeroSection />
+      <PainPointsSection />
+      <SolutionsAndFeatures />
+      <PricingSection />
+
+      {/* Footer */}
+      <footer className="border-t border-white/10 py-10 text-center text-sm text-white/50">
+        © {new Date().getFullYear()} Cloud Hosting by Ragil — Fokus ke bisnis, teknis biar kami yang urus.
+      </footer>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
